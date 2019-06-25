@@ -1,23 +1,19 @@
-function findAllPermutations(string) {
-  if (string.length < 2) { // This is our break condition
-    return string;
+
+function getAllPermutations(string) {
+  var results = [];
+
+  if (string.length === 1) {
+    results.push(string);
+    return results;
   }
 
-  let permutations = []; 
-
-  for (let i=0; i<string.length; i++) {
-    let char = string[i];
-
-    // Cause we don't want any duplicates:
-    if (string.indexOf(char) != i) {// if char was used already
-      continue;           // skip it this time
-    }
-    
-    let remainingString = string.slice(0,i) + string.slice(i+1,string.length); //Note: you can concat Strings via '+' in JS
-
-    for (let subPermutation of remainingString) {
-      permutations.push(char + subPermutation)
+  for (var i = 0; i < string.length; i++) {
+    var firstChar = string[i];
+    var charsLeft = string.substring(0, i) + string.substring(i + 1);
+    var innerPermutations = getAllPermutations(charsLeft);
+    for (var j = 0; j < innerPermutations.length; j++) {
+      results.push(firstChar + innerPermutations[j]);
     }
   }
-    return permutations;
+  return results;
 }
