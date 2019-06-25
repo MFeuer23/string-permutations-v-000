@@ -15,7 +15,7 @@ function findAllPermutations(string) {
     
     let remainingString = string.slice(0,i) + string.slice(i+1,string.length); //Note: you can concat Strings via '+' in JS
 
-    for (let subPermutation of permut(remainingString)) {
+    for (let subPermutation of remainingString) {
       permutations.push(char + subPermutation)
     }
   }
