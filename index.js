@@ -1,5 +1,5 @@
 
-function getAllPermutations(string) {
+function findAllPermutations(string) {
   var results = [];
 
   if (string.length === 1) {
