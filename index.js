@@ -1,4 +1,4 @@
-function findAllPermutations(str) {
+function findAllPermutations(string) {
   if (string.length < 2) { // This is our break condition
     return string;
   }
