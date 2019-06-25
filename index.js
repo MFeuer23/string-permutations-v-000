@@ -4,3 +4,4 @@ function findAllPermutations(str) {
     result.push(``)
   }
 }
+
